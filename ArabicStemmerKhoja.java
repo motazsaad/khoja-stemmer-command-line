@@ -1840,7 +1840,6 @@ public class ArabicStemmerKhoja {
         myStaticFiles.addElement ( diacritics );
 
         // the vector was successfully created
-        System.out.println( "read in files successfully" );
 
         return myStaticFiles;
     }

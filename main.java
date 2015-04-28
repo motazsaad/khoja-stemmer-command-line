@@ -11,6 +11,7 @@ Khoja algorithm reduces words to their roots. The algorithm is described in:
 
 Khoja S., Garside R., "Stemming Arabic text", Computer Science Department, Lancaster University, Lancaster, UK, 1999.
 
+http://zeus.cs.pacificu.edu/shereen/research.htm#stemming
 
  
 

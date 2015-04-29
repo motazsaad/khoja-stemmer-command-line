@@ -19,26 +19,56 @@ http://zeus.cs.pacificu.edu/shereen/research.htm#stemming
 */
 
 
+import khoja.ArabicStemmerKhoja;
+import myfileutil.myFileHandler;
 
-
-
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.util.*;
 
 public class main {
 
 	/**
 	 * @param args
 	 */
-	public static void main(String[] args) {
-		ArabicStemmerKhoja mystemmer = new ArabicStemmerKhoja(); 
+	public static void main(String[] args) throws FileNotFoundException, UnsupportedEncodingException, IOException {
+		// check command-line argument
+		if(args.length == 0) {
+			System.out.println("Usage: java main <input file> <output file>");
+			System.exit(0);
+		}
+
+		// file handler for I/O
+		myfileutil.myFileHandler fr = new myFileHandler();
+
+		// load stopwords
+		String stopwords = fr.readEntilerFile("stopwords.txt");
+		List<String> stopwordsList = Arrays.asList(stopwords.split("\n"));
 		
-		String sentence = "السلام عليكم قام المسافرون بالسفر على الطائرة";
-		String[] words = sentence.split(" ");
-		for (String word : words) {
-			System.out.println(mystemmer.stem(word));
+		ArabicStemmerKhoja mystemmer = new ArabicStemmerKhoja(); 
+				
+		String fin = args[0];	// input file 
+		String fout = args[1];	// output file 
+				
+		String s = fr.readEntilerFile(fin);	// read input file
+		
+		String[] lines = s.split("\n");
+		StringBuilder sbuf = new StringBuilder();
+		for (int i = 0; i < lines.length; i++) {
+		    String[] tokens = lines[i].split("\\s");
+		    for (int j = 0; j < tokens.length; j++) {
+		        String t = tokens[j];
+			if (! stopwordsList.contains(t)) {	// ignore stopwords 
+				String resut = mystemmer.stem(t);	// Khoja rooting algorithm 
+				sbuf.append(resut).append(" ");
+			}
+
+		    }
+		    sbuf.append("\n");
 		}
 		
-				
-		
+		fr.writeFileUTF(sbuf.toString(),fout);	// write results to the output file
 
 	}
 

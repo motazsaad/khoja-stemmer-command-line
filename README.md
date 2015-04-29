@@ -11,6 +11,12 @@ This software is a modification of Khoja algorithm for Arabic rooting. The origi
 
 Khoja algorithm reduces words to their roots. The algorithm is described in:
 
-Khoja S., Garside R., "Stemming Arabic text", Computer Science Department, Lancaster University, Lancaster, UK, 1999.
+- Khoja S., Garside R., "Stemming Arabic text", Computer Science Department, Lancaster University, Lancaster, UK, 1999.
 
-http://zeus.cs.pacificu.edu/shereen/research.htm#stemming
+- http://zeus.cs.pacificu.edu/shereen/research.htm#stemming
+
+
+## Usage example
+```
+java main test-in.txt test-out.txt
+```

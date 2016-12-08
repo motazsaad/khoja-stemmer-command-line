@@ -46,7 +46,6 @@ public class Main {
 		}
 
 		// file handler for I/O
-
 		// load stopwords
 		String stopwords = new Scanner(Paths.get("stopwords.txt"), "UTF-8").useDelimiter("\\A").next();
 

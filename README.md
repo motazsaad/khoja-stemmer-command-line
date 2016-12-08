@@ -2,7 +2,7 @@
 
 A command line version of Koja algorithm (An Arabic rooting algorithm). The algorithm reduces Arabic words to their roots.
 
-Version 1.0
+Version 1.1
 
 Author: Motaz Saad (motaz dot saad at gmail dot com)
 
@@ -18,5 +18,5 @@ The algorithm is described in:
 
 ## Usage example
 ```
-java main test-in.txt test-out.txt
+java -jar khoja-stemmer-command-line.jar test-in.txt test-out.txt
 ```

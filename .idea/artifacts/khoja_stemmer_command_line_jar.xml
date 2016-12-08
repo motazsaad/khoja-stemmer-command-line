@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="khoja-stemmer-command-line:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/khoja_stemmer_command_line_jar</output-path>
+    <root id="archive" name="khoja-stemmer-command-line.jar">
+      <element id="module-output" name="khoja-stemmer-command-line" />
+    </root>
+  </artifact>
+</component>
